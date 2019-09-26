@@ -16,10 +16,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VPS-UG-g5L" customClass="ColorPicker" customModule="ColorPicker" customModuleProvider="target">
-                                <rect key="frame" x="40" y="281" width="334" height="334"/>
+                                <rect key="frame" x="40" y="264.5" width="334" height="367"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="VPS-UG-g5L" secondAttribute="height" multiplier="1:1" id="9CZ-OP-7N9"/>
+                                    <constraint firstAttribute="width" secondItem="VPS-UG-g5L" secondAttribute="height" multiplier="1:1.1" id="9CZ-OP-7N9"/>
                                 </constraints>
                             </view>
                         </subviews>
