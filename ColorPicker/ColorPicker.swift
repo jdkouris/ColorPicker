@@ -11,6 +11,7 @@ import UIKit
 @IBDesignable
 class ColorPicker: UIControl {
     
+    var color: UIColor = .white
     var colorWheel: ColorWheel!
     var brightnessSlider: UISlider!
     
@@ -60,6 +61,42 @@ class ColorPicker: UIControl {
     
     @objc func changeBrightness() {
         colorWheel.brightness = CGFloat(brightnessSlider.value)
+    }
+    
+    // MARK: - Touch Tracking
+    
+    override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        let touchPoint = touch.location(in: self)
+        color = colorWheel.color(for: touchPoint)
+        sendActions(for: [.touchDown, .valueChanged])
+        return true
+    }
+    
+    override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        let touchPoint = touch.location(in: self)
+        if bounds.contains(touchPoint) {
+            color = colorWheel.color(for: touchPoint)
+            sendActions(for: [.touchDragInside, .valueChanged])
+        } else {
+            sendActions(for: [.touchDragOutside])
+        }
+        return true
+    }
+    
+    override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+        guard let touch = touch else { return }
+        
+        let touchPoint = touch.location(in: self)
+        if bounds.contains(touchPoint) {
+            color = colorWheel.color(for: touchPoint)
+            sendActions(for: [.touchUpInside, .valueChanged])
+        } else {
+            sendActions(for: [.touchUpOutside])
+        }
+    }
+    
+    override func cancelTracking(with event: UIEvent?) {
+        sendActions(for: [.touchCancel])
     }
     
 }
