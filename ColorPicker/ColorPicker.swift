@@ -84,6 +84,8 @@ class ColorPicker: UIControl {
     }
     
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+        defer { super.endTracking(touch, with: event) }
+        
         guard let touch = touch else { return }
         
         let touchPoint = touch.location(in: self)
@@ -96,6 +98,8 @@ class ColorPicker: UIControl {
     }
     
     override func cancelTracking(with event: UIEvent?) {
+        defer { super.cancelTracking(with: event) }
+        
         sendActions(for: [.touchCancel])
     }
     

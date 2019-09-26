@@ -21,6 +21,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="VPS-UG-g5L" secondAttribute="height" multiplier="1:1.1" id="9CZ-OP-7N9"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="changeColor:" destination="BYZ-38-t0r" eventType="valueChanged" id="WM8-i6-CAH"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
