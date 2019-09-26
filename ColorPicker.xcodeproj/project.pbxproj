@@ -13,6 +13,8 @@
 		2933E238233C4CD2004DA3D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2933E236233C4CD2004DA3D8 /* Main.storyboard */; };
 		2933E23A233C4CD2004DA3D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2933E239233C4CD2004DA3D8 /* Assets.xcassets */; };
 		2933E23D233C4CD2004DA3D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2933E23B233C4CD2004DA3D8 /* LaunchScreen.storyboard */; };
+		2933E245233C4E29004DA3D8 /* ColorWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2933E244233C4E29004DA3D8 /* ColorWheel.swift */; };
+		2933E247233C4E61004DA3D8 /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2933E246233C4E61004DA3D8 /* ColorPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		2933E239233C4CD2004DA3D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2933E23C233C4CD2004DA3D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2933E23E233C4CD2004DA3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2933E244233C4E29004DA3D8 /* ColorWheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorWheel.swift; sourceTree = "<group>"; };
+		2933E246233C4E61004DA3D8 /* ColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				2933E230233C4CD1004DA3D8 /* AppDelegate.swift */,
 				2933E232233C4CD1004DA3D8 /* SceneDelegate.swift */,
 				2933E234233C4CD1004DA3D8 /* ViewController.swift */,
+				2933E246233C4E61004DA3D8 /* ColorPicker.swift */,
+				2933E244233C4E29004DA3D8 /* ColorWheel.swift */,
 				2933E236233C4CD2004DA3D8 /* Main.storyboard */,
 				2933E239233C4CD2004DA3D8 /* Assets.xcassets */,
 				2933E23B233C4CD2004DA3D8 /* LaunchScreen.storyboard */,
@@ -140,7 +146,9 @@
 			files = (
 				2933E235233C4CD1004DA3D8 /* ViewController.swift in Sources */,
 				2933E231233C4CD1004DA3D8 /* AppDelegate.swift in Sources */,
+				2933E247233C4E61004DA3D8 /* ColorPicker.swift in Sources */,
 				2933E233233C4CD1004DA3D8 /* SceneDelegate.swift in Sources */,
+				2933E245233C4E29004DA3D8 /* ColorWheel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
