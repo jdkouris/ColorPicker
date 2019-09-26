@@ -10,6 +10,8 @@ import UIKit
 
 class ColorWheel: UIView {
     
+    var brightness: CGFloat = 0.8
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -29,7 +31,10 @@ class ColorWheel: UIView {
         for y in stride(from: 0, to: bounds.maxY, by: size) {
             for x in stride(from: 0, to: bounds.maxX, by: size) {
                 // Determine which color should be used for a given pixel location
-//                let color =
+                let color = self.color(for: CGPoint(x: x, y: y))
+                let pixel = CGRect(x: x, y: y, width: size, height: size)
+                color.set()
+                UIRectFill(pixel)
             }
         }
     }
@@ -39,7 +44,8 @@ class ColorWheel: UIView {
         let dy = location.y - center.y
         let dx = location.x - center.x
         let offset = CGPoint(x: dx / center.x, y: dy / center.y)
-        
+        let (hue, saturation) = Color.getHueSaturation(at: offset)
+        return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1.0)
     }
 
 }
