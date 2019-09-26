@@ -10,7 +10,11 @@ import UIKit
 
 class ColorWheel: UIView {
     
-    var brightness: CGFloat = 0.8
+    var brightness: CGFloat = 0.8 {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
     
     override func layoutSubviews() {
         super.layoutSubviews()

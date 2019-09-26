@@ -48,6 +48,7 @@ class ColorPicker: UIControl {
         brightnessSlider.value = 0.8
         
         brightnessSlider.translatesAutoresizingMaskIntoConstraints = false
+        brightnessSlider.addTarget(self, action: #selector(changeBrightness), for: .valueChanged)
         
         addSubview(brightnessSlider)
         NSLayoutConstraint.activate(
@@ -55,7 +56,10 @@ class ColorPicker: UIControl {
              brightnessSlider.leadingAnchor.constraint(equalTo: leadingAnchor),
              brightnessSlider.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
-        
+    }
+    
+    @objc func changeBrightness() {
+        colorWheel.brightness = CGFloat(brightnessSlider.value)
     }
     
 }
