@@ -12,6 +12,7 @@ import UIKit
 class ColorPicker: UIControl {
     
     var colorWheel: ColorWheel!
+    var brightnessSlider: UISlider!
     
     // for programmatic layouts
     override init(frame: CGRect) {
@@ -38,6 +39,21 @@ class ColorPicker: UIControl {
              colorWheel.leadingAnchor.constraint(equalTo: leadingAnchor),
              colorWheel.trailingAnchor.constraint(equalTo: trailingAnchor),
              colorWheel.heightAnchor.constraint(equalTo: colorWheel.widthAnchor)
+        ])
+        
+        // Brightness slider
+        brightnessSlider = UISlider()
+        brightnessSlider.minimumValue = 0
+        brightnessSlider.maximumValue = 1
+        brightnessSlider.value = 0.8
+        
+        brightnessSlider.translatesAutoresizingMaskIntoConstraints = false
+        
+        addSubview(brightnessSlider)
+        NSLayoutConstraint.activate(
+            [brightnessSlider.topAnchor.constraint(equalTo: colorWheel.bottomAnchor, constant: 10),
+             brightnessSlider.leadingAnchor.constraint(equalTo: leadingAnchor),
+             brightnessSlider.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
         
     }
