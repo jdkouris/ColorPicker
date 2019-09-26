@@ -8,14 +8,38 @@
 
 import UIKit
 
+@IBDesignable
 class ColorPicker: UIControl {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    
+    var colorWheel: ColorWheel!
+    
+    // for programmatic layouts
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setUpSubviews()
     }
-    */
-
+    
+    // for storyboard (xib) based layouts
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setUpSubviews()
+    }
+    
+    func setUpSubviews() {
+        backgroundColor = .clear
+        
+        // Color Wheel
+        colorWheel = ColorWheel()
+        colorWheel.translatesAutoresizingMaskIntoConstraints = false
+        
+        addSubview(colorWheel)
+        NSLayoutConstraint.activate(
+            [colorWheel.topAnchor.constraint(equalTo: topAnchor),
+             colorWheel.leadingAnchor.constraint(equalTo: leadingAnchor),
+             colorWheel.trailingAnchor.constraint(equalTo: trailingAnchor),
+             colorWheel.heightAnchor.constraint(equalTo: colorWheel.widthAnchor)
+        ])
+        
+    }
+    
 }
